@@ -1,0 +1,6 @@
+<div class="inner">
+	<input type="text" placeholder="请输入品牌、车系搜索"><button>
+		<i class="icon ix"></i>
+		立即搜索
+	</button>
+</div>

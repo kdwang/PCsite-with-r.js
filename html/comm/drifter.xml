@@ -1,0 +1,22 @@
+<div class="drifter">
+	<ul>
+		<li>
+			<a href="##">
+				<i class="icon ix1"></i>
+				客服热线
+			</a>
+		</li>
+		<li>
+			<a href="##">
+				<i class="icon ix2"></i>
+				微信关注
+			</a>
+		</li>
+		<li>
+			<a href="javascript:void(0)">
+				<i class="icon ix3"></i>
+				返回顶部
+			</a>
+		</li>
+	</ul>
+</div>

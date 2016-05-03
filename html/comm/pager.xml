@@ -1,0 +1,30 @@
+<div class="inner">
+	<ul class="pages">
+		<li>
+			<a class="no-more">&lt; 上一页</a>
+		</li>
+		<li>
+			<a href="##" class="active">1</a>
+		</li>
+		<li>
+			<a href="##">2</a>
+		</li>
+		<li>
+			<a href="##">3</a>
+		</li>
+		<li>
+			<span>…</span>
+		</li>
+		<li>
+			<a href="##">25</a>
+		</li>
+		<li>
+			<a href="##">下一页 &gt;</a>
+		</li>
+	</ul>
+	<div class="turn">
+		<span class="">跳转到</span>
+		<input type="text">
+		<button>GO</button>
+	</div>
+</div>

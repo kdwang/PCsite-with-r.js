@@ -1,0 +1,254 @@
+.usrpage{
+	background-color: #fff;
+}
+.btn{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.btn-1{
+	width: 326px;
+	font-size: 18px;
+	background-color: #FDD100;
+}
+.btn-2{
+	width: 164px;
+	font-size: 14px;
+	background-color: #EBEBEB;
+}
+.hd-wrap{
+	border-bottom: 1px solid #F2F2F2;
+	background-color: #F8F8F8;
+}
+.usr-header{
+    width: 1190px;
+    margin: 0 auto;
+	padding: 8px 0;
+	position: relative;
+	background-color: #F8F8F8;
+}
+.nav-main li{
+	float: left;
+	padding: 20px 20px 0;
+	font-size: 16px;
+	line-height: 18px;
+	color: #666;
+}
+.nav-main .nav-logo{
+	width: 75px;
+	height: 36px;
+	padding-top: 0;
+	text-indent: -1000px;
+	overflow: hidden;
+}
+.nav-main li a{
+	display: block;
+}
+.nav-main .nav-logo a{
+	width: 75px;
+	height: 36px;
+}
+.nav-right{
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+}
+.nav-right li{
+	float: left;
+	padding: 0 14px;
+	font-size: 14px;
+	line-height: 16px;
+}
+.nav-right li + li{
+	border-left: 1px solid #9A9A9A;
+}
+.nav-right li a{
+	color: #999;
+}
+.nav-right .nav-usr a{
+	color: #fa0;
+}
+
+.bd{
+	position: relative;
+	width: 1190px;
+	margin: 0 auto;
+}
+.bd .main{
+	margin-left: 220px;
+	border-left: 1px solid #F2F2F2;
+    min-height: 540px;
+}
+.bd .side{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 220px;
+	color: #444;
+	text-align: center;
+}
+.side .usr-basic{
+	padding-top: 40px;
+}
+.side .usr-nick{
+	padding: 10px 0;
+	margin-bottom: 5px;
+}
+.usr-basic .usr-profile{
+	display: block;
+	width: 180px;
+	height: 180px;
+	margin: 0 auto;
+}
+.side .usr-nav{
+	border-top: 1px solid #F2F2F2;
+}
+.usr-nav li{
+	height: 56px;
+	border-bottom: 1px solid #F2F2F2;
+	line-height: 56px;
+	font-size: 16px;
+}
+.usr-nav .usr-nav-cur{
+	background-color: #FDD100;
+}
+.main .sec-title{
+	padding: 40px 0 20px 20px;
+	font-size: 22px;
+	line-height: 1.0;
+	font-weight: normal;
+}
+.main .sec-subtitle{
+	font-size: 18px;
+	padding-left: 20px;
+	font-weight: normal;
+	line-height: 2.0;
+	border-bottom: 1px solid #F2F2F2;
+}
+.main .note{
+	padding: 10px 20px;
+}
+.main .userinfos{
+	margin-top: 20px;
+	padding: 0 0 40px 20px;
+}
+.main .sec-subtitle + .userinfos{
+	margin-top: 40px;
+}
+.main .userinfos li{
+	position: relative;
+	padding-bottom: 20px;
+	*zoom: 1;
+}
+.userinfos .btn-panel{
+	margin-top: 20px;
+}
+.userinfos .usr-label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+}
+.userinfos .usr-info{
+	position: relative;
+	/*min-height: 40px;*/
+	margin-left: 84px;
+	text-align: left;
+}
+.usr-info .usr-profile-wrap{
+	width: 120px;
+	height: 120px;
+	padding: 4px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	overflow: hidden;
+}
+.usr-info .usr-profile-wrap .usr-profile{
+	width: 100%;
+	height: 100%;
+}
+.usr-info .btn-2,
+.usr-info .btn-upload{
+	position: absolute;
+	bottom: 0;
+	left: 162px;
+}
+.usr-info .btn-upload{
+	z-index: 1;
+	width: 164px;
+	background-color: transparent;
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=00);
+}
+.usr-info .inp-usr{
+	width: 284px;
+	height: 38px;
+	padding: 0 20px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	line-height: 38px;
+	outline: none;
+}
+.usr-info .inp-usr:focus {
+	border-color: #FDD100;
+}
+
+/*模拟select jquery 插件  js/units/select.js */
+.select{
+  width:325px;
+  height:40px;
+  position: relative;
+  border:1px solid #ddd;
+  background:#fff;
+  color:#ddd;
+}
+.select-content{
+  margin-top:12px;
+  margin-left: 20px;
+  cursor:default;
+}
+
+.select-arrow{
+  width:38px;
+  height:38px;
+  position: absolute;
+  right:1px;
+  top:1px;
+  background:#ddd;
+}
+.select-arrow span{
+  position:absolute;
+  margin:13px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 14px solid #999;
+}
+.select-wrap{
+  margin: 0 0 0 -1px;;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 100%;
+  border:1px solid #ddd;
+  background:#fff;
+}
+.select-wrap li{
+  padding-left:18px;
+  height:40px;
+  line-height: 40px;
+  color:#000;
+}
+.select-wrap li.hover{
+  background:#3e3e3e;
+}
+.select-wrap.hide{
+  display: none;
+}
+/*模拟select jquery 插件 -- end*/

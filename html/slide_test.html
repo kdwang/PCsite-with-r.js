@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="../style/global.css">
+</head>
+
+<body>
+
+<style>
+
+.car_screen{ width: 593px; height:464px; border: 1px solid #e5e5e5; margin:20px auto;position:relative; border-radius: 5px;}
+.car_screen .arr{ position:absolute; z-index:99; cursor:pointer; background-color: #f7f7f7;}
+.car_screen .arr b{ display: block; width: 12px; height: 14px; overflow: hidden; background: url(../pic/spr_detail.png) no-repeat -12px -98px; position: absolute; top: 50%; left: 50%; margin: -6px -7px;}
+.car_screen .next b{ background-position: -47px -98px;}
+.car_screen .prev{ width: 30px; height: 89px; left:0; bottom: 0; border-radius: 0 0 0 5px;}
+.car_screen .next{ width: 29px; height: 89px; right:0; bottom: 0; border-radius: 0 0 5px 0;}
+
+.car_screen li{ float: left;}
+.car_screen .cont_list li{ position: relative;}
+
+.car_screen .pic_box{ height: 374px; position: relative; overflow: hidden; border-bottom: 1px solid #e5e5e5;}
+.car_screen .pic_box ul{ height:374px; position: absolute;}
+.car_screen .pic_box li{ width: 593px; height: 374px; overflow: hidden;}
+.car_screen .pic_box img{ width: 593px; height: 374px; border-radius: 5px;}
+
+.car_screen .list_box{ width: 534px; height: 89px; margin-left: 30px; position: relative; overflow: hidden;}
+.car_screen .list_box ul{ height: 89px; position: absolute;}
+.car_screen .list_box li{ width: 178px; height: 89px; cursor:pointer; position:relative;}
+
+.car_screen .list_box li img{ width: 178px; height: 89px; opacity: 0.3; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);}
+
+.car_screen .list_box .on img{ opacity: 1; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);}
+
+</style>
+
+<div class="car_screen">
+	<div id="picBox" class="pic_box">
+		<ul class="cont_list">
+			<li>
+				<a href="##"><img src="../pic/sample/593_374.jpg" alt="" /></a>
+			</li>
+			<li>
+				<a href="##"><img src="../pic/sample/593_374.jpg" alt="" /></a>
+			</li>
+			<li>
+				<a href="##"><img src="../pic/sample/593_374.jpg" alt="" /></a>
+			</li>
+			<li>
+				<a href="##"><img src="../pic/sample/593_374.jpg" alt="" /></a>
+			</li>
+			<li>
+				<a href="##"><img src="../pic/sample/593_374.jpg" alt="" /></a>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="listBox" class="list_box">
+		<ul class="cont_list">
+			<li class="on"><img src="../pic/sample/178_89.jpg" alt="" /></li>
+			<li><img src="../pic/sample/178_89.jpg" alt="" /></li>
+			<li><img src="../pic/sample/178_89.jpg" alt="" /></li>
+			<li><img src="../pic/sample/178_89.jpg" alt="" /></li>
+			<li><img src="../pic/sample/178_89.jpg" alt="" /></li>
+		</ul>
+	</div>
+
+	<span id="prev" class="arr prev"><b></b></span>
+	<span id="next" class="arr next"><b></b></span>
+</div>
+
+<script src="../js/base/jquery-1.8.0.min.js"></script>
+<script>
+(function(){
+	
+	function G(s){
+		return document.getElementById(s);
+	}
+	
+	function getStyle(obj, attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else{
+			return getComputedStyle(obj, false)[attr];
+		}
+	}
+	
+	function Animate(obj, json){
+		if(obj.timer){
+			clearInterval(obj.timer);
+		}
+		obj.timer = setInterval(function(){
+			for(var attr in json){
+				var iCur = parseInt(getStyle(obj, attr));
+				iCur = iCur ? iCur : 0;
+				var iSpeed = (json[attr] - iCur) / 5;
+				iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+				obj.style[attr] = iCur + iSpeed + 'px';
+				if(iCur == json[attr]){
+					clearInterval(obj.timer);
+				}
+			}
+		}, 20);
+	}
+
+	var oPic = G('picBox'),
+		oList = G('listBox'),
+		oPrev = G("prev"),
+		oNext = G("next");
+
+	var oPicLi = oPic.getElementsByTagName("li"),
+		oListLi = oList.getElementsByTagName("li"),
+		len1 = oPicLi.length,
+		len2 = oListLi.length;
+	
+	var oPicUl = oPic.getElementsByTagName("ul")[0],
+		oListUl = oList.getElementsByTagName("ul")[0],
+		w1 = oPicLi[0].offsetWidth,
+		w2 = oListLi[0].offsetWidth;
+
+	oPicUl.style.width = w1 * len1 + "px";
+	oListUl.style.width = w2 * len2 + "px";
+
+	var index = 0;
+	
+	var num = 3; // 当前可视区域小图的数量
+	var num2 = Math.ceil(num / 2);
+
+	function Change(){
+
+		Animate(oPicUl, {left: - index * w1});
+		
+		if(index < num2){
+			Animate(oListUl, {left: 0});
+		}else if(index + num2 <= len2){
+			Animate(oListUl, {left: - (index - num2 + 1) * w2});
+		}else{
+			Animate(oListUl, {left: - (len2 - num) * w2});
+		}
+
+		for (var i = 0; i < len2; i++) {
+			oListLi[i].className = "";
+			if(i == index){
+				oListLi[i].className = "on";
+			}
+		}
+	}
+	
+	oNext.onclick = function(){
+		index ++;
+		index = index == len2 ? 0 : index;
+		Change();
+	}
+
+	oPrev.onclick = function(){
+		index --;
+		index = index == -1 ? len2 -1 : index;
+		Change();
+	}
+
+	for (var i = 0; i < len2; i++) {
+		oListLi[i].index = i;
+		oListLi[i].onclick = function(){
+			index = this.index;
+			Change();
+		}
+	}
+	
+})()
+</script>
+
+</body>
+</html>

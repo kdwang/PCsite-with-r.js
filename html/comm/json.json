@@ -1,0 +1,154 @@
+{
+    "success": true,
+    "result": {
+        "product": {
+            "list": [
+                {
+                    "url": "",
+                    "tit": "首页",
+                    "pages": [
+                        {
+                            "subUrl": "homepage",
+                            "subTit": "首页"
+                        }
+                    ]
+                },
+                {
+                    "url": "",
+                    "tit": "找车",
+                    "pages": [
+                        {
+                            "subUrl": "xuanche",
+                            "subTit": "选车"
+                        },
+                        {
+                            "subUrl": "chexingxiangqing",
+                            "subTit": "车型详情"
+                        }
+                    ]
+                },
+                {
+                    "url": "",
+                    "tit": "购车方案",
+                    "pages": [
+                        {
+                            "subUrl": "shengchenggouchefangan",
+                            "subTit": "生成购车方案"
+                        },
+                        {
+                            "subUrl": "jingpinxiangqingye",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;精品详情页"
+                        },
+                        {
+                            "subUrl": "wodefanganliebiao",
+                            "subTit": "我的方案列表"
+                        }
+                    ]
+                },
+                {
+                    "url": "",
+                    "tit": "订单确认",
+                    "pages": [
+                        {
+                            "subUrl": "dingdanqueren",
+                            "subTit": "订单确认"
+                        }
+                    ]
+                },
+                {
+                    "url": "",
+                    "tit": "个人中心",
+                    "pages": [
+                        {
+                            "subUrl": "",
+                            "subTit": "--- 登录 ---"
+                        },
+                        {
+                            "subUrl": "denglu",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录"
+                        },
+                        {
+                            "subUrl": "zhuce",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册"
+                        },
+                        {
+                            "subUrl": "zhucetianxiecuowuzhuangtai",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册填写错误状态"
+                        },
+                        {
+                            "subUrl": "shoujiyanzhengmakuaisudenglu",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机验证码快速登录"
+                        },
+                        {
+                            "subUrl": "",
+                            "subTit": "--- 密码管理 ---"
+                        },
+                        {
+                            "subUrl": "wangjimima",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;忘记密码"
+                        },
+                        {
+                            "subUrl": "chongzhimima",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重置密码"
+                        },
+                        {
+                            "subUrl": "mimachongzhichenggong",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码重置成功"
+                        },
+                        {
+                            "subUrl": "",
+                            "subTit": "--- 个人资料 ---"
+                        },
+                        {
+                            "subUrl": "jibenziliao",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本资料"
+                        },
+                        {
+                            "subUrl": "xiugaimima",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改密码"
+                        },
+                        {
+                            "subUrl": "xiugaishoujihaoma",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改手机号码"
+                        },
+                        {
+                            "subUrl": "chedaixinxi",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;车贷信息"
+                        },
+                        {
+                            "subUrl": "baocunchenggong",
+                            "subTit": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;保存成功"
+                        }
+                    ]
+                },
+                {
+                    "url": "",
+                    "tit": "订单管理",
+                    "pages": [
+                        {
+                            "subUrl": "dingdanliebiao",
+                            "subTit": "订单列表"
+                        },
+                        {
+                            "subUrl": "dingdangenzong-cheliang",
+                            "subTit": "订单跟踪（车辆）"
+                        },
+                        {
+                            "subUrl": "dingdanxiangqing-baoxian",
+                            "subTit": "订单详情（保险）"
+                        },
+                        {
+                            "subUrl": "dingdanxiangqing-jingpin",
+                            "subTit": "订单详情（精品）"
+                        }
+                    ]
+                },
+                {
+                    "url": "wodeyudingche",
+                    "tit": "我的预定车"
+                }
+            ]
+        }
+    },
+    "error": null
+}

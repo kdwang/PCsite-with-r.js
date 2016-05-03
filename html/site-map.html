@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>YMC Pc Site1.0 - Prototype Frame</title>
+<!-- PF v1.3 -->
+<link rel="stylesheet" href="./comm/bootstrap.min.css">
+<script src="../js/base/jquery-1.8.0.min.js"></script>
+<script src="./comm/juicer.js"></script>
+<style>
+.leftPanel {
+	position:fixed;
+	left:0;
+	top:0;
+	overflow-y:scroll;
+	width:229px;
+	padding:0 5px;
+	border-right:1px solid #aaa;
+	box-shadow:0 0 10px rgba(66,139,202,0.7);
+	padding-bottom:30px;
+	font-size:13px;
+	font-family:MingLiU,Serif;
+}
+.leftPanel h3 {
+	margin-bottom:5px;
+	padding-bottom:5px;
+	border-bottom:1px dotted #aaa;
+	font-size:18px;
+	font-family:微软细黑;
+}
+.leftPanel ul,
+.leftPanel ol {
+	padding-left:30px;
+}
+.leftPanel li {
+	margin-bottom:2px;
+}
+.leftPanel a {
+	text-decoration:none;
+	outline:none;
+}
+.leftPanel .active {
+	padding:2px 4px;
+	border:1px solid #E1E1E8;
+	border-radius:3px;
+	font-weight: 700;
+	color:#DD1144;
+	background-color:#F7F7F9;
+}
+.RightPanel {
+	overflow-y:hidden;
+	margin-left:240px;
+}
+
+.show_url {
+	position:fixed;
+	left:-1px;
+	bottom:-1px;
+	font-family:georgia;
+}
+.show_url > .btn:first-child {
+	border-radius:0;
+}
+.show_url > .btn:last-child {
+	border-bottom-right-radius:0;
+}
+</style>
+</head>
+
+<body>
+	<div class="leftPanel">
+	<h3>YMC Pc Site1.0</h3>
+		<ol class="iframeUrl" id="iframeUrl"></ol>
+	</div>
+	<div class="RightPanel">
+		<iframe id="iframeSrc" src="./homepage.html" width="100%" height="100%" frameborder="0"></iframe>
+	</div>
+	<div class="btn-group show_url">
+		<span class="btn btn-default" id="showRul">URL</span>
+		<span class="btn btn-default btn-info"><i class="glyphicon glyphicon-chevron-left"></i></span><!-- glyphicon glyphicon-chevron-right -->
+	</div>
+
+<script id="tpl_product" type="text/template">
+	{@each list as it, index}
+		<li>
+			<a class="{@if index==0}active{@/if}" href="${it.url}">${it.tit}</a>
+			<ul>
+				{@each it.pages as it1, index}
+				<li>
+					<a href="{@if subUrl != ""} ${it1.subUrl}.html {@else} ${it1.subUrl} {@/if}">$${it1.subTit}</a>
+				</li>
+				{@/each}
+			</ul>
+		</li>
+	{@/each}
+</script>
+
+<script>
+$.ajax({
+	url: './comm/json.json',
+	data: {},
+	dataType: 'json',
+	jsonp: 'callback',
+	success: function(res) {
+
+		var tpl_product = $('#tpl_product').html();
+		var html = juicer(tpl_product, res.result.product);
+
+		$('#iframeUrl').html(html);
+
+		$('.iframeUrl a').click(function() {
+
+			$('.iframeUrl a').removeClass();
+			$(this).attr('class', 'active');
+
+			var thisUrl = $(this).attr('href');
+			if (thisUrl.length > 2) {
+				$('#iframeSrc').attr('src', thisUrl);
+			};
+
+			var showUrl = 'URL - <a href="' + thisUrl + '" target="_blank">' + thisUrl + '</a>';
+			$('#showRul').empty().append(showUrl);
+
+			return false;
+		});
+
+	},
+	error: function(xhr, type) {
+		alert(['error', xhr, type])
+	}
+})
+</script>
+
+<script>
+$(window).on('load resize', function() {
+	var clientHeight = $(window).height();
+	$('.leftPanel').height(clientHeight - 30);
+	$('.RightPanel').height(clientHeight);
+});
+
+$('.btn-info').click(function() {
+	if ($('#showRul').is(':hidden')) {
+		$('#showRul').show();
+		$('i', this).removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
+	} else {
+		$('#showRul').hide();
+		$('i', this).removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right');
+	};
+});
+</script>
+
+</body>
+</html>
+
+<!-- PF v1.3 -->
+<!-- 左栏内容过长添加滚动条及JS高度重新计算 - 14.4.10 -->
+
+<!-- PF v1.2 -->
+<!-- 新增CSS[完成]效果 - 13.12.26 -->
+
+<!-- PF v1.1 -->
+<!-- 更换CSS框架,优化JS,新增URL模块 - 13.12.12 -->
+
+<!-- PF v1.0 -->
+<!-- 第一版 - 13.5.17 -->
